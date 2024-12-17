@@ -1,0 +1,32 @@
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}
+Courses
+{% endblock page_title %}
+{% block main_content %}
+{% load static %}
+<html>
+    <body>
+        <center>
+    <table class="table table-striped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Course</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+        {% for course in userdata %}
+            <tr>
+                <td>{{ course.id }}</td>
+                <td>{{ course.course_name }}</td>
+                <td>
+                    <a href="/createqrcode/{{ course.id }}">Generate QR Code</a>
+                    <a href="{% url 'showqrcode' qr_code_id=course.id %}">View QR Code</a>
+                </td>
+            </tr>
+        {% endfor %}
+            </tbody>
+        </table> </center>
+</html>
+{% endblock main_content %}

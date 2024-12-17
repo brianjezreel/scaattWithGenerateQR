@@ -1,0 +1,11 @@
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}
+QR Code
+{% endblock page_title %}
+{% block main_content %}
+    <div class="container">
+        <h2>QR Code for {{ qr_code.course.course_name }}</h2>
+        <img src="{{ qr_code.image.url }}" alt="QR Code" style="width: 300px; height: 300px;">
+        <p>Code Value: {{ qr_code.code_value }}</p>
+    </div>
+{% endblock main_content %} 

@@ -1,0 +1,19 @@
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}
+Home
+{% endblock page_title %}
+{% block main_content %}
+{% load static %}
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+          <div class="col-2 text-center mx-auto ">
+            <img src="{% static "dist/img/logo.png" %}" style="width: 100px;">
+            <h4 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">PRESENT?</h2>
+            <button type="submit" class="btn btn-primary btn-block" button onclick="window.location.href ='/scanner'" method="post">SCAN NOW</button>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+    </form>
+      <!-- /.content -->
+{% endblock main_content %}
